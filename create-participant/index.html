@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
+            <a href="../other-page/index.html">Workshops List</a>
         </div>
     </header>    
     <button id="logout">Logout</button>
@@ -25,11 +25,12 @@
         <form class="create-participant-list">
             <label>
                 Name
-                <input />
+                <input name="name" />
             </label>
-            <div>
-
-            </div>
+            <label>
+                Select Workshop
+                <select name="workshop_id"></select>
+            </label>
             <button>Add Participant</button>
         </form>
     </main>
