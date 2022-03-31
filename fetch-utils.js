@@ -37,6 +37,13 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
+export function getWorkShops() {
+    const response = client.from('workshops')
+        .select('* participants (*)');
+
+    return response;
+}
+
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
