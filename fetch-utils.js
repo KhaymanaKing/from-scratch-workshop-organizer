@@ -45,7 +45,14 @@ export async function getWorkShops() {
     return response;
     
 }
+export async function getParticipants() {
+    const response = client
+        .from('participants')
+        .select('* workshops (*)');
 
+    return response;
+    
+}
 
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
