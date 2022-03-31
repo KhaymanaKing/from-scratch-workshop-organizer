@@ -1,6 +1,5 @@
 const SUPABASE_URL = 'https://lgzsfsqaohtkvywluksc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnenNmc3Fhb2h0a3Z5d2x1a3NjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDgxMzc4NzMsImV4cCI6MTk2MzcxMzg3M30.om7bZuYtorq0m3djqz_kSD3Nk_4yrHIUjDusyXl-Z9s';
-
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export function getUser() {
@@ -38,10 +37,10 @@ export async function logout() {
 }
 
 export async function getWorkShops() {
-    const response = client
+    const response = await client
         .from('workshops')
-        .select('* participants (*)');
-
+        .select('*, participants (*)');
+    
     return response;
     
 }

@@ -14,6 +14,7 @@ logoutButton.addEventListener('click', () => {
 
 window.addEventListener('load', async () => {
     const workShops = await getWorkShops();
+    console.log(workShops);
     for (let workshop of workShops) {
         const workshopEl = renderWorkshop(workshop);
         workshopListEl.append(workshopEl);
