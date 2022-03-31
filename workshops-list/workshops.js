@@ -13,8 +13,8 @@ logoutButton.addEventListener('click', () => {
 
 
 window.addEventListener('load', async () => {
-    const workshops = await getWorkShops();
-    for (let workshop of workshops) {
+    const workShops = await getWorkShops();
+    for (let workshop of workShops) {
         const workshopEl = renderWorkshop(workshop);
         workshopListEl.append(workshopEl);
     }

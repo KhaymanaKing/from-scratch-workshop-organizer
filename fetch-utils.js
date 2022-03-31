@@ -15,7 +15,7 @@ export function checkAuth() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('./workshops-list');
     }
 }
 
@@ -45,10 +45,13 @@ export async function getWorkShops() {
     return response;
     
 }
-export async function getParticipants() {
+export async function createParticipant(name, workshop_id) {
     const response = client
         .from('participants')
-        .select('* workshops (*)');
+        .insert({
+            name: name,
+            workshop_id: workshop_id
+        });
 
     return response;
     
