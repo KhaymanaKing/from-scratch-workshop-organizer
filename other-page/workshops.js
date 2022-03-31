@@ -1,5 +1,5 @@
 import { checkAuth, getWorkShops, logout } from '../fetch-utils.js';
-
+import { renderWorkshop } from '../render.js';
 checkAuth();
 
 const workshopListEl = document.querySelector('.workshops-list');
@@ -10,21 +10,12 @@ logoutButton.addEventListener('click', () => {
 });
 
 
+
+
 window.addEventListener('load', async () => {
     const workshops = await getWorkShops();
-    for (let workshop of workshops){
-        const workshopEl = document.createElement('div');
-        const topicEl = document.createElement('p');
-        
-        workshopEl.classList.add('workshop');
-        topicEl.textContent = workshop.topic;
-        
-        workshopEl.append(topicEl);
-
-        for (let participant of workshop.participants)
-            const participantEl= document.createElement('p');
-            
-            participantEl.textContent = participant.name;
-            workshopListEl.append(workshopEl);
+    for (let workshop of workshops) {
+        const workshopEl = renderWorkshop(workshop);
+        workshopListEl.append(workshopEl);
     }
 });
