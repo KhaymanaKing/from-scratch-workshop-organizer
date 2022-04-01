@@ -56,7 +56,14 @@ export async function createParticipant(name, workshop_id) {
     return response.body;
     
 }
-
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+export async function deleteParticipant(id) {
+    const response = await client
+        .from('participants')
+        .delete()
+        .match({ id: id })
+        .single();
+    return checkError(response);
+}
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}

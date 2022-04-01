@@ -1,3 +1,5 @@
+import { deleteParticipant } from './fetch-utils.js';
+
 export function renderWorkshop(workshop){
     const workshopEl = document.createElement('div');
     const topicEl = document.createElement('p');
@@ -11,8 +13,11 @@ export function renderWorkshop(workshop){
         const participantEl = document.createElement('p');
             
         participantEl.textContent = participant.participant_name;
-
-        console.log(participant.participant_name);
+        
+        participantEl.addEventListener('click', async () => {
+            await deleteParticipant(participant.id);
+            location.reload();
+        });
         workshopEl.append(participantEl);
     }
     
