@@ -24,3 +24,21 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+![wireframes for project](./assets/wireframes.png"wire frames picture")
+
+## HTML
+
+for to input name 
+selector for each work shop
+button to add user (which should be under the form)
+
+functions
+
+onload to show who has signed up
+submit for the form
+display users signed up function
+get workshops function
+create participant function
+delete participant function as per the Rubric
+
