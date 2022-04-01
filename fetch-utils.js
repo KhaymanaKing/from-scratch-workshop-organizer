@@ -41,7 +41,7 @@ export async function getWorkShops() {
         .from('workshops')
         .select('*, participants (*)');
     
-    return response;
+    return response.body;
     
 }
 export async function createParticipant(name, workshop_id) {
@@ -52,7 +52,7 @@ export async function createParticipant(name, workshop_id) {
             workshop_id: workshop_id
         });
 
-    return response;
+    return response.body;
     
 }
 

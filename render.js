@@ -10,8 +10,9 @@ export function renderWorkshop(workshop){
     for (let participant of workshop.participants) {
         const participantEl = document.createElement('p');
             
-        participantEl.textContent = participant.name;
+        participantEl.textContent = participant.participant_name;
 
+        console.log(participant.participant_name);
         workshopEl.append(participantEl);
     }
     
