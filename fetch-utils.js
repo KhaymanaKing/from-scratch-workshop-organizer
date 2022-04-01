@@ -45,12 +45,13 @@ export async function getWorkShops() {
     
 }
 export async function createParticipant(name, workshop_id) {
-    const response = client
+    const response = await client
         .from('participants')
         .insert({
-            name: name,
+            participant_name: name,
             workshop_id: workshop_id
         });
+
 
     return response.body;
     

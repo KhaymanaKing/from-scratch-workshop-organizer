@@ -10,7 +10,8 @@ form.addEventListener('submit', async (e) => {
 
     const data = new FormData(form);
 
-    await createParticipant(data.get('name'), data.get('workshop'));
+    await createParticipant(data.get('name'), data.get('workshop_id'));
+    form.reset();
 });
 
 
